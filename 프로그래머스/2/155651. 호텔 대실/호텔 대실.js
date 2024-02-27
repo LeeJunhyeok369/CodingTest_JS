@@ -7,13 +7,7 @@ function solution(book_time) {
             book_time[i][j]= j === 0? Number(time[0]) * 60 + Number(time[1]) : Number(time[0]) * 60 + Number(time[1]) + 10;            
         }
     }
-    book_time.sort((a, b) => {
-        if(a[0] === b[0]){
-            return a[1] - b[1];
-        }else {
-            return a[0] - b[0];
-        }
-    });
+    book_time.sort((a, b) => a[0] - b[0]);
 
     let nowArr = [];
     
@@ -21,14 +15,9 @@ function solution(book_time) {
         
 
         if(nowArr.length !== 0){
-            nowArr.sort((a, b) => {
-              if (b[0] === a[0]) {
-                return b[1] - a[1];
-              } else {
-                return b[0] - a[0];
-              };
-            });
-
+            
+            nowArr.sort((a, b) => b[1] - a[1]);
+            
             if(nowArr[0][1] > book_time[i][0]){
                 for(let j = 0; j < nowArr.length; j++){
                     if(nowArr[j][1] <= book_time[i][0]){
