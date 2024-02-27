@@ -35,9 +35,7 @@ function solution(book_time) {
             nowArr.push(book_time[i]);
         }
         
-        if(answer < nowArr.length){
-            answer = nowArr.length;
-        }
+        if(answer < nowArr.length) answer = nowArr.length;
     }
     
     
